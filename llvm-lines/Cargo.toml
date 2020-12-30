@@ -1,0 +1,24 @@
+[package]
+name = "clepsydra-llvm-lines"
+version = "0.1.0"
+authors = ["Graydon Hoare <graydon@pobox.com>"]
+edition = "2018"
+publish = false
+
+[[bin]]
+name = "clepsydra-test"
+path = "main.rs"
+
+[dependencies]
+clepsydra = { path = ".." }
+
+serde = { version = "1.0", features = ["derive"] }
+
+async-std = { version = "1.8.0", features = ["unstable"] }
+futures = "0.3.8"
+
+tracing = "0.1.22"
+tracing-subscriber = {version="0.2.15", features = ["chrono", "env-filter", "fmt"]}
+
+sluice = "0.5.3"
+duplexify = "1.2.2"

@@ -1,0 +1,44 @@
+[package]
+name = "clepsydra"
+description = "small distributed database protocol"
+keywords = ["database", "mvcc", "distributed", "transaction"]
+version = "0.1.0"
+authors = ["Graydon Hoare <graydon@pobox.com>"]
+edition = "2018"
+license = "MIT OR Apache-2.0"
+repository = "http://github.com/graydon/clepsydra"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "clepsydra"
+path = "src/lib.rs"
+
+[[bin]]
+name = "clepsydra-test"
+path = "src/main.rs"
+
+[dependencies]
+pergola = "0.9.0"
+concorde = "0.7.0"
+edelcrantz = "0.6.1"
+serde = { version = "1.0", features = ["derive"] }
+thiserror = "1.0.22"
+
+async-std = { version = "1.8.0", features = ["unstable"] }
+futures = "0.3.8"
+futures-util = "0.3.8"
+
+tracing = "0.1.22"
+tracing-futures = "0.2.4"
+
+tracing-tracy = {version="0.4.0", features = ["enable"], optional=true}
+
+[features]
+default = []
+tracy = ["tracing-tracy"]
+
+[dev-dependencies]
+sluice = "0.5.3"
+duplexify = "1.2.2"
+tracing-subscriber = {version="0.2.15", features = ["chrono", "env-filter", "fmt"]}
