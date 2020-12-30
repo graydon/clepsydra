@@ -2,7 +2,7 @@
 name = "clepsydra"
 description = "small distributed database protocol"
 keywords = ["database", "mvcc", "distributed", "transaction"]
-version = "0.2.0"
+version = "0.2.1-alpha.0"
 authors = ["Graydon Hoare <graydon@pobox.com>"]
 edition = "2018"
 license = "MIT OR Apache-2.0"
