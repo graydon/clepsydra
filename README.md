@@ -49,6 +49,10 @@ Nothing's perfect, and this crate is anything but:
    anything other than experiments and toys. Recovery, reconfiguration,
    timeouts and nontrivial fault tolerance paths _definitely_ don't work.
 
+ - It also (somewhat recklessly) attempts to combine OV's reconfiguration
+   and gossip protocols into an instance of the [concorde] reconfigurable
+   lattice agreement protocol. This might not even be _theoretically_ safe.
+
  - It is much more minimal than the full OV protocol: there's no support
    for sharding, nor the two-level peer-vs-datacenter locality organization.
    This crate treats its whole peer group as a single symmetric shard.
@@ -88,3 +92,5 @@ Wikipedia:
 > the regulated flow of liquid into (inflow type) or out from (outflow type)
 > a vessel, and where the amount is then measured.
 
+
+License: MIT OR Apache-2.0
